@@ -1,0 +1,129 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+}
+
+.star {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 1px;
+  height: 1px;
+  background-color: #fff;
+  animation: fall 1s ease-in-out infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-1000px);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.card {
+  width: 90%;
+  max-width: 400px;
+  height: 300px;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px black;
+  text-align: center;
+  position: relative;
+  perspective: 1000px;
+  animation: bounce 0.5s ease-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-100px);
+  }
+  60% {
+    transform: translateY(10px);
+  }
+  80% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px gray;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.card-front {
+  background-color: lemonchiffon;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 36px;
+  color: #6C757D;
+  text-shadow: 1px 1px 1px #fff;
+  margin-bottom: 30px;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  color: #6C757D;
+  padding: 20px;
+}
+
+.card-back {
+  background-color: lemonchiffon;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 36px;
+  color: #6C757D;
+  text-shadow: 1px 1px 1px #fff;
+  margin-bottom: 30px;
+}
+
+.card-back p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  color: #6C757D;
+  padding: 20px;
+}
+
